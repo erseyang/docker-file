@@ -1,0 +1,20 @@
+services:
+  nginx:
+    container_name: nginx-stable
+    image: nginx:stable-alpine
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "80:80"
+      - "443:443"
+    user: root
+    volumes:
+      - /opt/docker/nginx/log:/var/nginx/log
+      - /opt/docker/nginx/conf:/etc/nginx
+      - /opt/docker/nginx/www:/usr/share/nginx/html
+    restart: always
+    networks:
+      - infra-net
+networks:
+  infra-net:
+    external: true

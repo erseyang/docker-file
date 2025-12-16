@@ -1,0 +1,2 @@
+1. docker 拷贝nginx的文件到宿主机，有/etc/nginx目录下的文件
+有/var/nginx/log
